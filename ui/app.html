@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Person Classifier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dropzone.min.css">
+    <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light bg-light justify-content-center">
+        <a class="navbar-brand" href="#">Celebrity Classifier</a>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+        <div class="col card-wrapper" data-player="cristiano_ronaldo">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/cristiano_ronaldo1.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Cristiano Ronaldo</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+		<div class="col card-wrapper" data-player="deepika_padukone">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/deepika_padukone1.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Deepika Padukone</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+		<div class="col card-wrapper" data-player="dhoni">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/Dhoni1.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Dhoni</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>
+		<div class="col card-wrapper" data-player="jennifer_aniston">
+					<div class="card border-0">
+						<div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+							<img class="w-100 h-100" src="./images/jennifer_aniston1.png" alt="Card image cap">
+						</div>
+						<div class="card-body text-center mt-4">
+							<h4 class="text-uppercase card-title">Jennifer Aniston</h4>
+							</p>
+						</div>
+					</div>
+				</div>
+	<div class="col card-wrapper" data-player="scarlett_johansson">
+					<div class="card border-0">
+						<div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+							<img class="w-100 h-100" src="./images/scarlett_johansson1.png" alt="Card image cap">
+						</div>
+						<div class="card-body text-center mt-4">
+							<h4 class="text-uppercase card-title">Scarlett Johansson</h4>
+							</p>
+						</div>
+					</div>
+				</div>
+		<div class="col card-wrapper" data-player="will_smith">
+                <div class="card border-0">
+                    <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                        <img class="w-100 h-100" src="./images/will_smith1.png" alt="Card image cap">
+                    </div>
+                    <div class="card-body text-center mt-4">
+                        <h4 class="text-uppercase card-title">Will Smith</h4>
+                        </p>
+                    </div>
+                </div>
+            </div>      
+	
+
+            <div class="col card-wrapper" data-player="tony_stark">
+                    <div class="card border-0">
+                        <div class="position-relative rounded-circle overflow-hidden mx-auto custom-circle-image">
+                            <img class="w-100 h-100" src="./images/tony_stark1.png" alt="Card image cap">
+                        </div>
+                        <div class="card-body text-center mt-4">
+                            <h4 class="text-uppercase card-title">Tony Stark</h4>
+                            </p>
+                        </div>
+                    </div>
+            </div>            
+                     
+
+                  
+
+            
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="row">
+                    <div class="col-12 mx-auto">
+                        <form action="/file-upload" class="dropzone" id="dropzone">
+                            <div class="dz-message needsclick">
+                                <img src="./images/tony_stark1.png" width="50vw" height="50vw"><br>
+                                <span class="note needsclick">Drop files here or click to upload</span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-3 mx-auto">
+                        <button id="submitBtn" type="button" class="btn btn-success">Classify</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-sm-8 error" id="error" >
+                <p>Can't classify image. Classifier was not able to detect face and two eyes properly</p>    
+            </div>
+
+            <div class="col-sm-4" id="resultHolder">
+            </div>
+            <div class="col-sm-4" id="divClassTable">
+                <table id="classTable">
+                        <tr>
+                            <th>Player</th>
+                            <th>Probability Score</th>
+                        </tr>
+						<tr>
+                            <td>Cristiano Ronaldo</td>
+                            <td id="score_cristiano_ronaldo"></td>
+                        </tr>
+						<tr>
+                            <td>Deepika Padukone</td>
+                            <td id="score_deepika_padukone"></td>
+                        </tr>
+						<tr>
+                            <td>Dhoni</td>
+                            <td id="score_dhoni"></td>
+                        </tr>
+						<tr>
+                            <td>Jennifer Aniston</td>
+                            <td id="score_jennifer_aniston"></td>
+                        </tr>
+						 <tr>
+                            <td>Scarlett Johansson</td>
+                            <td id="score_scarlett_johansson"></td>
+                        </tr>
+						
+						<tr>
+                            <td>Tony Stark</td>
+                            <td id="score_tony_stark"></td>
+                        </tr>
+                        <tr>
+                            <td>Will Smith</td>
+                            <td id="score_will_smith"></td>
+                        </tr>
+                        					
+                </table>
+            </div>
+            
+        </div>
+
+    </div>
+
+</body>
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="./dropzone.min.js"></script>
+<script src="./app.js"></script>
+</html>
