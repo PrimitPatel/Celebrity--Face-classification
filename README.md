@@ -1,1 +1,1 @@
-# Celebrity--Face-classification
+# Celebrity-Face-Classification
